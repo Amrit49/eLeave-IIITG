@@ -1,0 +1,129 @@
+/* LoginPage.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-color: #7C93C3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .wrapper {
+    display: flex;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 1200px;
+    height: 550px;
+    position: relative;
+  }
+  
+  .wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  h2 {
+    padding: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+
+  .login_left {
+    width: 50%; /* Takes half of the wrapper */
+    /* background: url('../assets/bg1.webp') no-repeat center center; */
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .login_left .college-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Right side for login form */
+  /* .wrapper .login_right {
+    width: 70%;
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+   */
+
+   .login_right {
+    width: 400px; /* Define fixed width */
+    height: 80%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:rgba(255, 255, 255, 0.5);
+    border-radius: 20px; /* Curved border */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+  .input-box {
+    /* margin-top: 10%; */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: 5%;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login__icon {
+    position: absolute;
+    left: 10px;
+    color: #555;
+  }
+  
+  .login-button {
+    padding: 10px;
+    width: 50%;
+    background-color: #4CAF50;
+    margin-left: 25%;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #45a049;
+  }
+  
