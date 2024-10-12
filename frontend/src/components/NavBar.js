@@ -1,33 +1,68 @@
 import React , {useState} from 'react';
 import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from '../assets/logo.png';
+import { FaBell, FaTasks, FaCalendarCheck, FaUser,FaSignOutAlt } from 'react-icons/fa';
+import {useNavigate} from 'react-router-dom';
 
 const NavBar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleDropdown =() => {
         setDropdownOpen(!dropdownOpen);
+    }
+
+    const handleProfileClick = () =>{
+        navigate('/account');
+    };
+    const handleLogoutClick =()=>{
+        navigate('/');
     }
   return (
     <nav className='navbar'>
         <div className='navbar-container'>
             <div className='navbar-logo'>
-                <img src="../assets/logo.jpeg" alt='college logo'/>
+                <img src={logo} alt='college logo'/>
             </div>
 
             <ul className='nav-links'>
-                <li><a href='#'>NOTIFICATION</a></li>
-                <li><a href='#'>TASKS</a></li>
-                <li><a href='#'>LEAVE STATUS</a></li>
+                <li>
+                    <a href='#' title='Notifications'>
+                        <FaBell />
+                    </a>
+                </li>
+
+                <li>
+                    <a href='#' title='Tasks'>
+                        <FaTasks />
+                    </a>
+                </li>
+
+                <li>
+                    <a href='#' title='Leave Staus'>
+                    <FaCalendarCheck />
+                    </a>
+                </li>
                 
                 <li className='navbar-dropdown' onClick={toggleDropdown}>
-                    <a href='#' className='dropdown-toggle'>ACCOUNT</a>
+                    <a href='#' className='dropdown-toggle' title='Account'>
+                        <FaUser />
+                    </a>
                     {dropdownOpen && (
-                        <ul className='dropdown-menu'>
-                            <li><a href='#'>PROFILE</a></li>
-                            <li><a href='#'>SETTINGS</a></li>
-                            <li><a href='#'>LOGOUT</a></li>
-                        </ul>
+                        <div className='dropdown-menu'>
+                            <div className='upper-triangle'></div>
+                                <ul className='dropdown-list'>
+                                    <li onClick={handleProfileClick}>
+                                        <FaUser className="dropdown-list-icon" />
+                                        <span>PROFILE</span>
+                                    </li>
+                                    <li onClick={handleLogoutClick}>
+                                        <FaSignOutAlt className="dropdown-list-icon" />
+                                        <span>LOGOUT</span>
+                                    </li>
+                                </ul>
+                        </div>
                     )}
                 </li>
             </ul>

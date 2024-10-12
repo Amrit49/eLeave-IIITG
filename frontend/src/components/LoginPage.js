@@ -11,7 +11,7 @@ const LoginPage = () => {
     navigate('/main');
   }
   return (
-    <div className='container'>
+    <div className='login-page'>
     <div className="wrapper">
          <div className="login_left">
           {/* <img src="../assets/bg1.webp" alt="College Logo" className="college-image" /> */}
@@ -30,7 +30,7 @@ const LoginPage = () => {
           </div>
 
           <button type="submit" className="login-button">Login</button>
-          </form> 
+        </form> 
       </div>
       
     </div>
